@@ -7,17 +7,20 @@ import java.util.Comparator;
  */
 public class CheckGo {
     private ArrayList<ArrayList<Integer>> locations;    //remaining locations to be checked
-    private ArrayList<ArrayList<Integer>> locations2;
-    int[][] boardPositions;
+    private ArrayList<ArrayList<Integer>> locations2;   //copy of locations
+    int[][] boardPositions; //positions of all tiles and who owns them on the board
     //holds points making up empty spaces enclosed by placed tiles
-    ArrayList<ArrayList<String>> groups;   
-    protected Boolean hasEye;
-    protected ArrayList<String> checked;
-    protected ArrayList<ArrayList<String>> whiteGroups;
-    protected ArrayList<ArrayList<String>> blackGroups;
-    protected ArrayList<ArrayList<String>> validWhiteGroups;
+    protected ArrayList<ArrayList<String>> groups;   //all groups of enclosed tiles
+    protected Boolean hasEye;   //track whether a group has an eye
+    protected ArrayList<String> checked;    //track which tiles have been checked
+    protected ArrayList<ArrayList<String>> whiteGroups; //all white tile groups formed
+    protected ArrayList<ArrayList<String>> blackGroups; //all black tile groups formed
+    //white tile groups that count to score
+    protected ArrayList<ArrayList<String>> validWhiteGroups; 
+    //black tile groups that count to score   
     protected ArrayList<ArrayList<String>> validBlackGroups;
-    protected ArrayList<ArrayList<String>> eyes;
+    protected ArrayList<ArrayList<String>> eyes;    //coordinates of all eyes found
+    //corresponding to each eye, all groups that contain it
     protected ArrayList<ArrayList<ArrayList<String>>> eyeContainedIn;
 
     /** Constructor.
